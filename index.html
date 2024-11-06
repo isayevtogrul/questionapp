@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Quiz Game</title>
+</head>
+<body>
+
+    <script>
+        // İdman növlərinə uyğun 
+let footballQuestions = [
+    { question: "Who won the 2018 FIFA World Cup?", answer: "France" },
+    { question: "Which club has won the most UEFA Champions League titles?", answer: "Real Madrid" },
+    { question: "Who is known as the 'King of Football'?", answer: "Ronaldo" }
+];
+
+let basketballQuestions = [
+    { question: "Which team has won the most NBA championships?", answer: "Boston Celtics" },
+    { question: "Who is known as 'His Airness' in basketball?", answer: "Michael Jordan" },
+    { question: "Which country won the basketball gold medal in the 2008 Olympics?", answer: "USA" }
+];
+
+let tennisQuestions = [
+    { question: "Who holds the record for the most Grand Slam titles?", answer: "Novak Djokovic" },
+    { question: "Which tournament is played on clay courts?", answer: "French Open" },
+    { question: "Who is known as the 'King of Clay'?", answer: "Rafael Nadal" }
+];
+
+
+let sport = prompt("Which sport are you most interested in? (football, basketball, tennis)").toLowerCase();
+let questions = [];
+
+
+if (sport === "football") {
+    questions = footballQuestions;
+} else if (sport === "basketball") {
+    questions = basketballQuestions;
+} else if (sport === "tennis") {
+    questions = tennisQuestions;
+} else {
+    alert("Invalid sport selection. Please refresh and try again.");
+}
+
+if (questions.length > 0) {
+    alert("Great choice! Let's start the quiz on " + sport + "!");
+    
+    
+    let userAnswer1 = prompt(questions[0].question);
+    if (userAnswer1 && userAnswer1.trim().toLowerCase() === questions[0].answer.toLowerCase()) {
+        alert("Correct!");
+    } else {
+        alert("Incorrect. The correct answer is: " + questions[0].answer);
+    }
+
+
+    let userAnswer2 = prompt(questions[1].question);
+    if (userAnswer2 && userAnswer2.trim().toLowerCase() === questions[1].answer.toLowerCase()) {
+        alert("Correct!");
+    } else {
+        alert("Incorrect. The correct answer is: " + questions[1].answer);
+    }
+
+
+    let userAnswer3 = prompt(questions[2].question);
+    if (userAnswer3 && userAnswer3.trim().toLowerCase() === questions[2].answer.toLowerCase()) {
+        alert("Correct!");
+    } else {
+        alert("Incorrect. The correct answer is: " + questions[2].answer);
+    }
+
+    alert("Quiz completed! Thanks for playing.");
+}
+
+
+    </script>
+</body>
+</html>
